@@ -14,19 +14,19 @@
     "karma-junit-reporter": "^0.2.2"
   },
   "scripts": {
-    "postinstall": "bower install",
+    "postinstall": "node_modules/.bin/bower.cmd install",
 
     "prestart": "npm install",
-    "start": "http-server -a localhost -p 8000",
+    "start": "node_modules/.bin/http-server.cmd -a localhost -p 8000",
 
     "pretest": "npm install",
-    "test": "karma start test/karma.conf.js --single-run",
-    "test-single-run": "karma start test/karma.conf.js  --single-run",
+    "test": "node_modules/.bin/karma.cmd start test/karma.conf.js",
+    "test-single-run": "node_modules/.bin/karma.cmd start test/karma.conf.js  --single-run",
 
     "preupdate-webdriver": "npm install",
-    "update-webdriver": "webdriver-manager update",
+    "update-webdriver": "node_modules/.bin/webdriver-manager.cmd update",
 
     "preprotractor": "npm run update-webdriver",
-    "protractor": "protractor test/protractor-conf.js"
+    "protractor": "node_modules/.bin/protractor.cmd test/protractor-conf.js"
   }
 }
