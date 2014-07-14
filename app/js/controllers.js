@@ -3,9 +3,13 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-  .controller('MyCtrl1', ['$scope', function($scope) {
+    .controller('CoursesController', ['$scope', '$http', function ($scope, $http) {
+        $http.get('data/courses.json').success(function (courses) {
+            $scope.currentCourses = courses;
+        });
 
-  }])
-  .controller('MyCtrl2', ['$scope', function($scope) {
-
-  }]);
+        $scope.register = function (attendee) {
+            $scope.attendees = $scope.attendees || [];
+            $scope.attendees.push(angular.copy(attendee));
+        };
+    }]);

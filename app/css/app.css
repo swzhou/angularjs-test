@@ -28,3 +28,42 @@
   content: "";
   padding: 0;
 }
+
+.content {
+    left: 200px;
+}
+
+table {
+    width: 60%;
+}
+table thead {
+    background-color: #eee;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 4px;
+}
+
+td li {
+    color: #0000FF;
+    font-weight: bold;
+}
+
+div form {
+    padding-top: 20px;
+}
+
+label{
+    width: 60px;
+}
+
+input, label,select{
+    width: 160px;
+    display: inline-block;
+    padding: 4px;
+}
+
+#date.ng-invalid-date {
+    color: red;
+}

@@ -1,0 +1,44 @@
+<div>
+    <table>
+        <thead>
+        <th>Name</th>
+        <th>Online Date</th>
+        <th>Attendees</th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="course in currentCourses">
+            <td>{{course.name}}</td>
+            <td>{{course.online}}</td>
+            <td>
+                <ul>
+                    <li ng-repeat="attendee in attendees | filter: course.name">{{attendee | attendeeDisplayName}} when {{attendee.date}}</li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+
+    <form name="registerCourseForm">
+        <h3>Register to a new course?</h3>
+        <div>
+         <label for="name">Your Name:</label>
+         <input id="name" type="text" ng-model="newAttendee.name"/>
+        </div>
+        <div>
+            <label for="email">Your Email:</label>
+            <input id="email" type="text" ng-model="newAttendee.email"/>
+        </div>
+        <div>
+            <label for="course">Course:</label>
+         <select id="course" ng-model="newAttendee.course">
+            <option ng-repeat="course in currentCourses" value="{{course.name}}">{{course.name}}</option>
+         </select>
+        </div>
+        <div>
+            <label for="date">Your Prefered Date:</label>
+            <date id="date" ng-model="newAttendee.date"/>
+        </div>
+         <input type="button" value="Register" ng-click="register(newAttendee)" ng-disabled = "registerCourseForm.$invalid">
+    </form>
+</div>
