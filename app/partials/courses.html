@@ -21,8 +21,8 @@
         </tr>
         </tbody>
     </table>
-    <form name="registerCourseForm" role="form" class="form-horizontal col-md-6">
-        <h3 class="modal-header">Register to a new course?</h3>
+    <form name="registerCourseForm" role="form" class="form-horizontal col-md-7">
+        <h3>Register to a new course?</h3>
 
         <div class="form-group">
             <label for="name">Your Name:</label>
@@ -42,7 +42,7 @@
             <label for="date">Your Preferred Date:</label>
             <date id="date" class="form-control" ng-model="newAttendee.date"/>
         </div>
-        <input type="button" class="btn btn-primary col-md-offset-9" value="Register" ng-click="register(newAttendee)"
+        <input type="button" class="btn btn-primary col-md-offset-10" value="Register" ng-click="register(newAttendee)"
                ng-disabled="registerCourseForm.$invalid">
     </form>
 </div>
