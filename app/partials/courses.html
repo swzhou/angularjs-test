@@ -13,7 +13,7 @@
             <td>{{course.online}}</td>
             <td>
                 <ul>
-                    <li ng-repeat="attendee in attendees | filter: course.name">{{attendee | attendeeDisplayName}} when
+                    <li ng-repeat="attendee in attendees | filter: course.name">{{attendee | attendeeDisplayName}} registered at
                         {{attendee.date}}
                     </li>
                 </ul>

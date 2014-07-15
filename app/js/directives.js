@@ -30,7 +30,7 @@ angular.module('myApp.directives', [])
                 setModelValue();
 
                 ngModel.$parsers.push(function (value) {
-                    var isValid = value.match(/[0-9]{2}-[0-9]{2}-[0-9]{2}$/);
+                    var isValid = value.match(/[0-9]{4}\/[0-9]{2}\/[0-9]{2}$/);
                     ngModel.$setValidity('date', isValid);
                     if (isValid) {
                         return value;
