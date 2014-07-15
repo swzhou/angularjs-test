@@ -1,9 +1,11 @@
-<div>
-    <table>
+<div class="col-md-8">
+    <table class="table table-hover table-condensed">
         <thead>
-        <th>Name</th>
-        <th>Online Date</th>
-        <th>Attendees</th>
+        <tr>
+            <th>Name</th>
+            <th>Online Date</th>
+            <th>Attendees</th>
+        </tr>
         </thead>
         <tbody>
         <tr ng-repeat="course in currentCourses">
@@ -11,34 +13,36 @@
             <td>{{course.online}}</td>
             <td>
                 <ul>
-                    <li ng-repeat="attendee in attendees | filter: course.name">{{attendee | attendeeDisplayName}} when {{attendee.date}}</li>
+                    <li ng-repeat="attendee in attendees | filter: course.name">{{attendee | attendeeDisplayName}} when
+                        {{attendee.date}}
+                    </li>
                 </ul>
             </td>
         </tr>
         </tbody>
-
     </table>
+    <form name="registerCourseForm" role="form" class="form-horizontal col-md-6">
+        <h3 class="modal-header">Register to a new course?</h3>
 
-    <form name="registerCourseForm">
-        <h3>Register to a new course?</h3>
-        <div>
-         <label for="name">Your Name:</label>
-         <input id="name" type="text" ng-model="newAttendee.name"/>
+        <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input id="name" type="text" class="form-control" ng-model="newAttendee.name"/>
         </div>
-        <div>
+        <div class="form-group">
             <label for="email">Your Email:</label>
-            <input id="email" type="text" ng-model="newAttendee.email"/>
+            <input id="email" type="text" class="form-control" ng-model="newAttendee.email"/>
         </div>
-        <div>
+        <div class="form-group">
             <label for="course">Course:</label>
-         <select id="course" ng-model="newAttendee.course">
-            <option ng-repeat="course in currentCourses" value="{{course.name}}">{{course.name}}</option>
-         </select>
+            <select id="course" class="form-control" ng-model="newAttendee.course">
+                <option ng-repeat="course in currentCourses" value="{{course.name}}">{{course.name}}</option>
+            </select>
         </div>
-        <div>
-            <label for="date">Your Prefered Date:</label>
-            <date id="date" ng-model="newAttendee.date"/>
+        <div class="form-group">
+            <label for="date">Your Preferred Date:</label>
+            <date id="date" class="form-control" ng-model="newAttendee.date"/>
         </div>
-         <input type="button" value="Register" ng-click="register(newAttendee)" ng-disabled = "registerCourseForm.$invalid">
+        <input type="button" class="btn btn-primary col-md-offset-9" value="Register" ng-click="register(newAttendee)"
+               ng-disabled="registerCourseForm.$invalid">
     </form>
 </div>
