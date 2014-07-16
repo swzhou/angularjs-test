@@ -29,7 +29,7 @@ describe('CoursesController', function () {
     });
 
     it('should register to a new course given attendee information', function () {
-        var newAttendee = {name:'new attendee', course: 'c#'};
+        var newAttendee = {name: 'new attendee', course: 'c#'};
 
         scope.register(newAttendee);
 
