@@ -4,14 +4,11 @@
 
 
 angular.module('myApp.directives', [])
-    .directive('appVersion', ['app', function (app) {
-        return function (scope, element, attr) {
-            app.get().then(function (response) {
-                var appConfig = response.data;
-                element.text(appConfig.version);
-            });
+    .directive('appVersion', function () {
+        return function(scope, element, attr){
+            element.text('1.0.0');
         };
-    }])
+    })
     .directive('date', function () {
         return {
             replace: true,
