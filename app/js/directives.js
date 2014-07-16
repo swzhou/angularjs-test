@@ -3,13 +3,11 @@
 /* Directives */
 
 angular.module('myApp.directives', [])
-    .directive('appVersion', ['app', function (app) {
-        return function (scope, element, attr) {
-            return function(scope, element, attr){
-                element.text('1.0.0');
-            };
+    .directive('appVersion', function () {
+        return function(scope, element, attr){
+            element.text('1.0.0');
         };
-    }])
+    })
     .directive('date', function () {
         return {
             replace: true,
