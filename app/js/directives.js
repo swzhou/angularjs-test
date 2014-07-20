@@ -5,7 +5,9 @@
 angular.module('myApp.directives', [])
     .directive('appVersion', ['app',function(app){
         return function(scope, element, attr){
-            element.text(app.version);
+            app.get().then(function(response) {
+                element.text(response.data.version);
+            });
         };
     }])
     .directive('date', function () {
