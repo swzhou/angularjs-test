@@ -6,10 +6,8 @@
 // Demonstrate how to register services
 // In this case it is a simple value service.
 angular.module('myApp.services', []).
-    factory('app', ['$http', function ($http) {
+    factory('app', function () {
         return {
-            get: function () {
-                return $http.get('data/app.json');
-            }
-        }
-    }]);
+            version: "1.0.1"
+        };
+    });
